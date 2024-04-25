@@ -1,0 +1,36 @@
+.ProfileAvatar {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  width: 2rem;
+  height: 2rem;
+}
+.ProfileAvatar.red {
+  background-image: linear-gradient(#ffc7c2, #fdb0ab);
+}
+.ProfileAvatar.orange {
+  background-image: linear-gradient(#ffe0b4, #fed298);
+}
+.ProfileAvatar.yellow {
+  background-image: linear-gradient(#ffedb8, #ffe597);
+}
+.ProfileAvatar.green {
+  background-image: linear-gradient(#caf2d3, #b7f0c0);
+}
+.ProfileAvatar.blue {
+  background-image: linear-gradient(#d0eefe, #bce8fc);
+}
+.ProfileAvatar.pink {
+  background-image: linear-gradient(#fdd1dc, #ffbfcc);
+}
+.ProfileAvatar.purple {
+  background-image: linear-gradient(#e0d8fb, #d5cafb);
+}
+.ProfileAvatar.white {
+  background-image: linear-gradient(#dedede, #d2d1d3);
+}

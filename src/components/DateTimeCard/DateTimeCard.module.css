@@ -1,0 +1,31 @@
+.DateTimeCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-color: #207FD6;
+  border-radius: 1.375rem;
+  color: #fff;
+  padding: 1.125rem;
+  width: 100%;
+  height: 100%;
+}
+.DateTimeCard .dayLabel, .DateTimeCard .timeLabel {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.031rem;
+  line-height: 2.5rem;
+}
+.DateTimeCard .currentDate {
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  top: 1.125rem;
+  right: 1.125rem;
+}

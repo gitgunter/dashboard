@@ -1,0 +1,148 @@
+.TeodriveButton {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  column-gap: 0.375rem;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.default {
+  --brandColor: #207FD6;
+  --brandColor300: #125ecb;
+  --brandColor400: #0f53b2;
+  background-color: var(--brandColor);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  transition: background-color 100ms ease-out, box-shadow 200ms;
+
+  &:hover {
+    background-color: var(--brandColor300);
+  }
+
+  &:active {
+    background-color: var(--brandColor400);
+    box-shadow: inset 0 0 0 1px var(--brandColor), 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus-visible {
+    $brandColor: #207FD6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($brandColor, 0.4);
+  }
+}
+
+.primary {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 100ms ease-out;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+
+  &:active {
+    background-color: #cccccc;
+    box-shadow: inset 0 0 0 1px #fff, 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus-visible {
+    $brandColor: #207FD6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.secondary {
+  background-color: rgba(255, 255, 255, 13%);
+  color: #fff;
+  transition: background-color 100ms ease-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 9%);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 5%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 13%), 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 100ms ease-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 13%);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 13%);
+  transition: background-color 100ms ease-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 13%);
+    box-shadow: none;
+  }
+}
+
+.large {
+  border-radius: 0.875rem;
+  padding: 0.75rem 0.875rem;
+}
+
+.medium {
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+}
+
+.small {
+  border-radius: 0.625rem;
+  padding: 0.375rem 0.625rem;
+}
+
+// .createExamBtn {
+//   --brandColor: #207FD6;
+//   --brandColor300: #125ecb;
+//   --brandColor400: #0f53b2;
+//   cursor: pointer;
+//   user-select: none;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   vertical-align: baseline;
+//   column-gap: 0.375rem;
+//   background-color: var(--brandColor);
+//   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+//   border-radius: 0.75rem;
+//   color: #fff;
+//   font-size: 0.875rem;
+//   font-weight: 500;
+//   line-height: 1.25rem;
+//   padding: 0.625rem 0.75rem;
+//   transition: background-color 100ms ease-out;
+
+//   &:hover {
+//     background-color: var(--brandColor300);
+//   }
+
+//   &:active {
+//     background-color: var(--brandColor400);
+//     box-shadow: inset 0 0 0 1px var(--brandColor);
+//   }
+// }

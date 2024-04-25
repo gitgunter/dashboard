@@ -1,0 +1,442 @@
+.resumenContainer {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  padding: 2.5rem 1.5rem;
+  max-width: 1280px;
+  width: 100%;
+}
+
+.resumenGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 80px);
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  row-gap: 0.625rem;
+  padding-top: 2rem;
+}
+
+#StatisticsCardWrapper {
+  grid-column: 1/5;
+  grid-row: 1/5;
+}
+
+#DateTimeCard {
+  grid-column: 5/9;
+  grid-row: 1/3;
+}
+
+#RestrictionCard {
+  grid-column: 5/9;
+  grid-row: 3/5;
+}
+
+#extra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  color: #fff;
+  padding: 1.125rem;
+  grid-column: 9/13;
+  grid-row: 1/5;
+}
+
+#box1 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/5;
+  grid-row: 5/9;
+  /* Handle on hover */
+}
+#box1::-webkit-scrollbar {
+  width: 16px;
+}
+#box1::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#box1::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
+}
+#box1::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#box2 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 5/9;
+  grid-row: 5/9;
+  /* Handle on hover */
+}
+#box2::-webkit-scrollbar {
+  width: 16px;
+}
+#box2::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#box2::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
+}
+#box2::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#box3 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 9/13;
+  grid-row: 5/9;
+  /* Handle on hover */
+}
+#box3::-webkit-scrollbar {
+  width: 16px;
+}
+#box3::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#box3::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
+}
+#box3::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.overflowscroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.625rem;
+  height: 100%;
+  /* Handle on hover */
+}
+.overflowscroll::-webkit-scrollbar {
+  width: 16px;
+}
+.overflowscroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.overflowscroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  background-clip: content-box;
+  border-radius: 10px;
+  border: 6px solid transparent;
+}
+.overflowscroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pageNavigationBar {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeMessage {
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  letter-spacing: -0.047rem;
+}
+.welcomeMessage .username {
+  color: #fff;
+}
+
+.caption {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.actions {
+  display: inline-flex;
+}
+
+.titleAndCaption {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.cardSectionTitle {
+  position: sticky;
+  background-color: #161616;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: -0.016rem;
+  padding-top: 0.375rem;
+  padding-bottom: 1rem;
+}
+
+.overviewExamCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  padding: 1.125rem;
+  width: 100%;
+}
+.overviewExamCard .cardLeft {
+  display: grid;
+}
+.overviewExamCard .cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.overviewExamCard .examName {
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.overviewExamCard .examStatus {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.overviewExamCard .examScore {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+.overviewExamCard .examScoreLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.overviewExamCard .approved {
+  color: #00f9b3;
+}
+.overviewExamCard .failed {
+  color: #ed4e4f;
+}
+
+.overviewModeCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  padding: 1.125rem;
+  width: 100%;
+}
+.overviewModeCard .cardLeft {
+  display: grid;
+}
+.overviewModeCard .cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.overviewModeCard .modeName {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.overviewModeCard .modeIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.overviewModeCard .modeStatus {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.overviewModeCard .modeScore {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+.overviewModeCard .modeScoreLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.overviewModeCard .approved {
+  color: #00f9b3;
+}
+.overviewModeCard .failed {
+  color: #ed4e4f;
+}
+
+.overviewUnMinutoCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  padding: 1.125rem;
+  width: 100%;
+}
+.overviewUnMinutoCard .cardLeft {
+  display: grid;
+}
+.overviewUnMinutoCard .cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}
+.overviewUnMinutoCard .modeName {
+  overflow: hidden;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.overviewUnMinutoCard .modeIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.overviewUnMinutoCard .createdAt {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.overviewUnMinutoCard .modeScore {
+  color: #207fd6;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+}
+.overviewUnMinutoCard .icon {
+  color: #207fd6;
+}
+.overviewUnMinutoCard .modeScoreLabel {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.overviewUnMinutoCard .approved {
+  color: #00f9b3;
+}
+.overviewUnMinutoCard .failed {
+  color: #ed4e4f;
+}
+
+.NoteCard {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  padding: 1rem;
+  width: 100%;
+}
+.NoteCard .noteCardHeader {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 0.625rem;
+}
+.NoteCard .noteCardHeader .noteCardDate {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.NoteCard .noteCardTitle {
+  overflow: hidden;
+  display: -webkit-box;
+  color: #fff;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.625rem; /* 144.444% */
+  letter-spacing: -0.01563rem;
+  width: 100%;
+  height: 3.25rem;
+}
+.NoteCard .noteCardContent {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.4);
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+  height: 3rem;
+}
+.NoteCard:hover {
+  background-color: #232323;
+}
+
+.overviewNoteGrid {
+  --auto-grid-min-size: 180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  row-gap: 0.625rem;
+  width: 100%;
+}

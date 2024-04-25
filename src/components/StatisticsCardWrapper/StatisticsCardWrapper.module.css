@@ -1,0 +1,44 @@
+.StatisticsCardWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
+  row-gap: 0.625rem;
+  width: 100%;
+  height: 100%;
+}
+
+.StatCard {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  color: #fff;
+  padding: 1.125rem;
+}
+.StatCard .statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #207FD6;
+  border-radius: 10rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.StatCard .statTitle {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+.StatCard .statNumber {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 3rem; /* 120% */
+  letter-spacing: -0.0625rem;
+}

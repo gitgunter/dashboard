@@ -1,0 +1,38 @@
+.examTimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.examTimer .timer {
+  color: #1676fe;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.016rem;
+  line-height: 2rem;
+}
+
+.timerControlBtn {
+  --inputShadow: 0 2px 1px rgb(26, 26, 26, 5%);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: baseline;
+  background-color: transparent;
+  box-shadow: var(--inputShadow);
+  border-radius: 10rem;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.timerControlBtn img {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.timerControlBtn:hover img {
+  opacity: 1;
+}

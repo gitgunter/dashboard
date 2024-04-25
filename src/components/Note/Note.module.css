@@ -1,0 +1,108 @@
+.Note {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-top: 3.5rem;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
+.titlePlaceholder {
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+  color: rgba(255, 255, 255, 0.2);
+  top: 0px;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  letter-spacing: -0.047rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.noteTitle {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  letter-spacing: -0.047rem;
+}
+
+.titleEditor, .contentEditor {
+  outline: none;
+}
+
+.contentEditor {
+  margin-top: 1rem;
+  height: 100%;
+}
+
+.contentPlaceholder {
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+  color: rgba(255, 255, 255, 0.2);
+  top: 0px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+  width: 100%;
+  max-width: 100%;
+}
+
+.noteContent {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+}
+
+.changeEmojiBtn {
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: background-color 100ms ease-out;
+}
+.changeEmojiBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.NoteEmoji {
+  position: relative;
+  display: flex;
+}
+.NoteEmoji .emojiMenu {
+  position: absolute;
+  border-radius: 1rem;
+  background-color: #232323;
+  border: none;
+  inset: 0;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.noteActions {
+  display: inline-flex;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+  padding-bottom: 1rem;
+}

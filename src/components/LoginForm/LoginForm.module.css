@@ -1,0 +1,31 @@
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  width: 330px;
+}
+@media screen and (width < 768px) {
+  .LoginForm {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+}
+
+.formInputWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+}
+
+.InputError {
+  color: #ED4E4F;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.375rem;
+}

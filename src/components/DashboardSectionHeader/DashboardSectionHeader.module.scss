@@ -1,0 +1,32 @@
+.DashboardSectionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .sectionHeaderTitle {
+    grid-area: title;
+    color: #fff;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3rem;
+    letter-spacing: -0.01875rem;
+
+    @media screen and (width < 768px) {
+      font-size: 2rem;
+      letter-spacing: -0.031rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  .sectionHeaderDescription {
+    grid-area: caption;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    padding-top: 0.5rem;
+  }
+}

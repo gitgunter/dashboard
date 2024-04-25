@@ -1,0 +1,42 @@
+.ProfileAvatar {
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  width: 2.125rem;
+  height: 2.125rem;
+
+  &.red {
+    background-image: linear-gradient(#ffc7c2, #fdb0ab);
+  }
+
+  &.orange {
+    background-image: linear-gradient(#ffe0b4, #fed298);
+  }
+
+  &.yellow {
+    background-image: linear-gradient(#ffedb8, #ffe597);
+  }
+
+  &.green {
+    background-image: linear-gradient(#caf2d3, #b7f0c0);
+  }
+
+  &.blue {
+    background-image: linear-gradient(#d0eefe, #bce8fc);
+  }
+
+  &.pink {
+    background-image: linear-gradient(#fdd1dc, #ffbfcc);
+  }
+
+  &.purple {
+    background-image: linear-gradient(#e0d8fb, #d5cafb);
+  }
+
+  &.white {
+    background-image: linear-gradient(#dedede, #d2d1d3);
+  }
+}

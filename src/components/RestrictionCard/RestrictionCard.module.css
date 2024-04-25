@@ -1,0 +1,45 @@
+.RestrictionCard {
+  container-type: inline-size;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-color: #1E1E1E;
+  border-radius: 1.375rem;
+  color: #fff;
+  padding: 1.125rem;
+  width: 100%;
+  height: 100%;
+}
+.RestrictionCard::before {
+  position: absolute;
+  content: "";
+  display: flex;
+  background-image: url("../../assets/images/car.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  right: -85px;
+  width: 350px;
+  height: 150px;
+}
+@media screen and (max-width: 480px) {
+  .RestrictionCard::before {
+    top: -20px;
+    right: -150px;
+  }
+}
+.RestrictionCard .cardTitle, .RestrictionCard .restrictionNumber {
+  color: #207FD6;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.031rem;
+  line-height: 2.5rem;
+  z-index: 1;
+}

@@ -1,0 +1,64 @@
+.Toast {
+  position: relative;
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border-radius: 0.625rem;
+  padding: 0.875rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 200px;
+}
+
+.toastIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.125rem;
+}
+.toastIcon.success {
+  background-color: rgba(0, 249, 178, 0.1);
+  color: #00f9b3;
+}
+.toastIcon.warn {
+  background-color: rgba(255, 179, 0, 0.1);
+  color: #ffb300;
+}
+.toastIcon.error {
+  background-color: rgba(237, 78, 78, 0.1);
+  color: #ed4e4f;
+}
+
+.toastCloseBtn {
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: auto;
+  padding: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.toastCloseBtn:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.toastLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.toastCaption {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  padding-top: 0.5rem;
+}

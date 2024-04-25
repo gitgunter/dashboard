@@ -1,0 +1,50 @@
+.Breadcrumbs {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+}
+@media screen and (width <= 768px) {
+  .Breadcrumbs {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    visibility: hidden;
+    display: none;
+  }
+}
+.Breadcrumbs .goBackBtn {
+  cursor: pointer;
+  display: flex;
+  background-color: transparent;
+  border-radius: 0.625rem;
+  padding: 0.375rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Breadcrumbs .goBackBtn:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+.Breadcrumbs .goBackBtn .icon {
+  color: #fff;
+}
+.Breadcrumbs .breadcrumbItem {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+.Breadcrumbs .breadcrumbItem:last-child {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+.Breadcrumbs .breadcrumbItem .separator {
+  cursor: default;
+}

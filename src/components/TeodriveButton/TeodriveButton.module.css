@@ -1,0 +1,108 @@
+.TeodriveButton {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  white-space: nowrap;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.default {
+  --brandColor: #207FD6;
+  --brandColor300: #125ecb;
+  --brandColor400: #0f53b2;
+  background-color: var(--brandColor);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  transition: background-color 100ms ease-out, box-shadow 200ms;
+}
+.default:hover {
+  background-color: var(--brandColor300);
+}
+.default:active {
+  background-color: var(--brandColor400);
+  box-shadow: inset 0 0 0 1px var(--brandColor), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.default:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(32, 127, 214, 0.4);
+}
+
+.primary {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 100ms ease-out;
+}
+.primary:hover {
+  background-color: #e6e6e6;
+}
+.primary:active {
+  background-color: #cccccc;
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+.secondary {
+  background-color: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  transition: background-color 100ms ease-out;
+}
+.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+.secondary:active {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.13), 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.ghost {
+  background-color: transparent;
+  color: #fff;
+  transition: background-color 100ms ease-out;
+}
+.ghost:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.outline {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.13);
+  transition: background-color 100ms ease-out;
+}
+.outline:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: none;
+}
+
+.large {
+  border-radius: 0.875rem;
+  padding: 0.75rem 0.875rem;
+}
+
+.medium {
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+}
+
+.small {
+  border-radius: 0.625rem;
+  padding: 0.375rem 0.625rem;
+}

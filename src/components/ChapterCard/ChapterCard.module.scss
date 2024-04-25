@@ -1,0 +1,97 @@
+.ChapterCard {
+  user-select: none;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1.375rem;
+  padding: 1.5rem;
+  height: 100%;
+  transition: box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px #207FD6;
+  }
+}
+
+.chapterNumber {
+  display: inline-flex;
+  column-gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.016rem;
+  line-height: 2rem;
+
+  span {
+    color: #207FD6;
+  }
+}
+
+.chapterTitle {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.016rem;
+  line-height: 2rem;
+}
+
+.favoriteTag,
+.articlesTag {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.favoriteTag {
+  color: #f9b300;
+  background-color: rgba(249, 178, 0, 12%);
+  border-radius: 10rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.articlesTag {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0;
+
+  h2 {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.addFavoriteButton {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 10rem;
+  width: 2.5rem;
+  height: 2.5rem;
+
+  .favoriteIcon {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+
+    .favoriteIcon {
+      color: #fff;
+    }
+  }
+
+  &.active {
+    &:hover {
+      background-color: rgba(249, 178, 0, 12%);
+    }
+
+    .favoriteIcon {
+      color: #f9b300;
+    }
+  }
+}

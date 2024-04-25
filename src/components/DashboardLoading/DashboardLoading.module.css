@@ -1,0 +1,46 @@
+.DashboardLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.875rem;
+}
+.DashboardLoading .TitleLoading {
+  display: flex;
+  background-color: #232323;
+  border-radius: 10rem;
+  width: 10.938rem;
+  height: 2.5rem;
+  animation-name: colorFade;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.DashboardLoading .CaptionLoading {
+  display: flex;
+  background-color: #232323;
+  border-radius: 10rem;
+  width: 18.75rem;
+  height: 1rem;
+  animation-name: colorFade;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes colorFade {
+  0% {
+    background-color: #232323;
+  }
+  25% {
+    background-color: #232323;
+  }
+  50% {
+    background-color: #282828;
+  }
+  75% {
+    background-color: #232323;
+  }
+  100% {
+    background-color: #232323;
+  }
+}
