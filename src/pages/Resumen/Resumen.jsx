@@ -43,7 +43,6 @@ function Resumen() {
           <Breadcrumbs paths={breadcrumbs} />
           <div className={css.headerWrapper}>
             <div className={css.titleAndCaption}>
-              Something new! 🚀
               <WelcomeMessage username={isLoading ? '--' : data.username} />
               <p className={css.caption}>Resumen de tu progreso por Teodrive</p>
             </div>
