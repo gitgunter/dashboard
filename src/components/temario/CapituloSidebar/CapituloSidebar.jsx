@@ -94,7 +94,7 @@ const CapituloSidebar = () => {
           {dropListData.map((item, index) => (
             <CellDropdown
               key={index}
-              icon={<Folder01 size={20} className={css.folder} />}
+              // icon={<Folder01 size={20} className={css.folder} />}
               label={item.label}
               cellRef={(ref) => (cellRefs.current[index] = ref)}
               onClick={(e) => handleSlider(e, cellRefs.current[index])}
