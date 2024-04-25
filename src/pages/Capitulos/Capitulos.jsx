@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Editable, Slate, withReact } from 'slate-react';
 import { Editor, Range, createEditor } from 'slate';
 
+import CapituloSidebar from '@components/temario/CapituloSidebar/CapituloSidebar';
+
 import css from './Capitulos.module.css';
 
 function Capitulos() {
@@ -88,7 +90,7 @@ function Capitulos() {
 
   return (
     <div className={css.Capitulos}>
-      <div>Sidebar</div>
+      <CapituloSidebar />
       <Page
         title='Capitulo 1 - Teodrive'
         metaDesc='Informe detallado de los resultados de tu examen'
