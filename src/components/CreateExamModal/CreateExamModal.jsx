@@ -17,6 +17,7 @@ export const CreateExamModal = ({ onCancel, onCreate, formik }) => {
 
   const handleRadioChange = (event) => {
     const value = event.target.value;
+    formik.resetForm();
     setSelectedOption(value);
   };
 
@@ -77,6 +78,9 @@ export const CreateExamModal = ({ onCancel, onCreate, formik }) => {
             placeholder={
               selectedOption === 'custom' ? 'Examen personalizado' : 'Mi examen'
             }
+            error={
+              formik.errors.name && formik.touched.name && formik.errors.name
+            }
           />
           {selectedOption === 'custom' ? (
             <form
@@ -95,6 +99,9 @@ export const CreateExamModal = ({ onCancel, onCreate, formik }) => {
                 placeholder='10'
                 value={formik.values.questions}
                 onChange={formik.handleChange}
+                error={
+                  formik.errors.questions && formik.touched.questions && formik.errors.questions
+                }
               />
               <TeodriveInput
                 inputLabel='Duración'
@@ -103,6 +110,9 @@ export const CreateExamModal = ({ onCancel, onCreate, formik }) => {
                 placeholder='10 min'
                 value={formik.values.timeLimit}
                 onChange={formik.handleChange}
+                error={
+                  formik.errors.timeLimit && formik.touched.timeLimit && formik.errors.timeLimit
+                }
               />
             </form>
           ) : null}
@@ -156,11 +166,7 @@ export const CreateExamModal = ({ onCancel, onCreate, formik }) => {
           >
             Cancelar
           </TeodriveButton>
-          <TeodriveButton
-            title='Aceptar'
-            size='small'
-            onClick={onCreate}
-          >
+          <TeodriveButton title='Aceptar' size='small' onClick={onCreate}>
             Aceptar
           </TeodriveButton>
         </div>

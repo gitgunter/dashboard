@@ -54,9 +54,24 @@ function Examenes() {
       isRealTimeValidation: false,
     },
     validationSchema: object({
-      name: string().max(22).required(),
-      questions: number().min(1).max(100).required(),
-      timeLimit: number().min(1).max(120).required(),
+      name: string()
+        .max(22, 'El nombre del examen debe tener como máximo 22 caracteres.')
+        .required('Introduce un nombre para tu examen'),
+      questions: number()
+        .min(1, 'Para comenzar el examen, se necesita al menos una pregunta.')
+        .max(100, 'El examen debe tener un máximo 100 preguntas.')
+        .required(
+          'Para comenzar el examen, se necesita al menos una pregunta.'
+        ),
+      timeLimit: number()
+        .min(
+          1,
+          'Para comenzar el examen, se necesita un tiempo mínimo de un minuto'
+        )
+        .max(120, 'El examen debe tener un tiempo máximo de 120 minutos.')
+        .required(
+          'Para comenzar el examen, se necesita un tiempo mínimo de un minuto.'
+        ),
       isShowResults: boolean().required(),
       isRepeatFailures: boolean().required(),
       isTimerControllers: boolean().required(),
