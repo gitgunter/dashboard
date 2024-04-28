@@ -174,7 +174,7 @@ function Examenes() {
           />
         ) : (
           <div className={css.examCardWrapper}>
-            {examsQuery.data.reverse().map((exam, index) => (
+            {examsQuery.data.map((exam, index) => (
               <ExamCard
                 key={index}
                 score={exam.score}
