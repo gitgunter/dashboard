@@ -97,7 +97,7 @@ export const LoginForm = () => {
           )}
         </div>
       </div>
-      <TeodriveButton type='submit' disabled={loginMutation.isLoading}>
+      <TeodriveButton type='submit' width='100%' disabled={loginMutation.isLoading}>
         {loginMutation.isLoading ? 'Validando...' : 'Iniciar sesión'}
       </TeodriveButton>
     </form>
