@@ -1,0 +1,29 @@
+[
+  {
+    "variant_id": "357226",
+    "plan_id": "basic",
+    "plan_name": "Básico",
+    "price": 3000,
+    "features": [
+      "Acceso a tus estadísticas",
+      "Temario completo",
+      "Descargar temario en PDF",
+      "Exámenes ilimitados"
+    ]
+  },
+  {
+    "variant_id": "331869",
+    "plan_id": "premium",
+    "plan_name": "Premium",
+    "price": 5500,
+    "features": [
+      "Acceso a tus estadísticas",
+      "Temario completo",
+      "Descargar temario en PDF",
+      "Exámenes ilimitados",
+      "Personalización de exámenes",
+      "Modalidades de estudio",
+      "Soporte prioritario"
+    ]
+  }
+]

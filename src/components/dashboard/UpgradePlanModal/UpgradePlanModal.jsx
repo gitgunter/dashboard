@@ -1,15 +1,29 @@
 import { useEffect, useState } from 'react';
+import { nanoid } from 'nanoid';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import ModalWrap from '@components/common/ModalWrap/ModalWrap';
 import Wrap from '@components/common/Wrap/Wrap';
 import { Tick02 } from '@icons/index';
 import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
+import planData from '@config/plans.json';
 
 import css from './UpgradePlanModal.module.css';
+import { useAuth } from '@context/AuthContext';
 
 const UpgradePlanModal = ({ isVisible, onCancel }) => {
   const [selectedPlan, setSelectedPlan] = useState('premium');
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
+
+  const { data } = useAuth();
+
+  useEffect(() => {
+    const plan = planData.find((plan) => plan.plan_id === selectedPlan);
+    if (plan) {
+      setSelectedFeatures(plan.features);
+    }
+  }, [selectedPlan]);
 
   const handleRadioChange = (event) => {
     const value = event.target.value;
@@ -22,6 +36,26 @@ const UpgradePlanModal = ({ isVisible, onCancel }) => {
     }
   }, [isVisible, selectedPlan]);
 
+  // Logica de negocio
+  const id = nanoid();
+  const apiURL = 'https://api.teodrive.com/payments/purchase-plan';
+
+  const createPayment = async () => {
+    try {
+      const plan = planData.find((plan) => plan.plan_id === selectedPlan);
+      const payment = await axios.post(apiURL, {
+        user_order_id: id,
+        user_order_email: data?.email,
+        variant_id: plan.variant_id,
+      });
+
+      window.location.href = payment.data;
+    } catch (error) {
+      console.error('Error fetching:', error);
+      throw error;
+    }
+  };
+
   return (
     <ModalWrap isVisible={isVisible} onClose={onCancel}>
       <div className={css.UpgradePlanModal}>
@@ -31,37 +65,32 @@ const UpgradePlanModal = ({ isVisible, onCancel }) => {
             <h2 className={css.caption}>Desbloquea funciones adicionales</h2>
           </Wrap>
           <Wrap direction='column' rowGap='0.625rem'>
-            <Feature label='Acceso a tus estadísticas' />
-            <Feature label='Temario completo' />
-            <Feature label='Temario editable' />
-            <Feature label='Descargar temario en PDF' />
-            <Feature label='Exámenes ilimitados' />
-            <Feature label='Personalización de exámenes' />
-            <Feature label='Modalidades de estudio' />
-            <Feature label='Soporte prioritario' />
+            {selectedFeatures.map((feature, index) => (
+              <Feature key={index} label={feature} />
+            ))}
           </Wrap>
         </Wrap>
         <hr className={css.Divider} />
         <Wrap direction='column' rowGap='1rem' width='260px'>
           <h1 className={css.title}>Planes</h1>
           <Wrap direction='column' rowGap='0.5rem' width='100%'>
-            <Plan
-              title='Básico'
-              price='3,000'
-              value='basic'
-              onChange={handleRadioChange}
-              selected={selectedPlan}
-            />
-            <Plan
-              title='Premium'
-              price='5,495'
-              value='premium'
-              onChange={handleRadioChange}
-              selected={selectedPlan}
-            />
+            {planData.map((plan) => (
+              <Plan
+                key={plan.plan_id}
+                title={plan.plan_name}
+                price={plan.price}
+                value={plan.plan_id}
+                onChange={handleRadioChange}
+                selected={selectedPlan}
+              />
+            ))}
           </Wrap>
           <Wrap direction='column' rowGap='0.625rem' className={css.bottom}>
-            <TeodriveButton className={css.upgradePlanButton} width='100%'>
+            <TeodriveButton
+              onClick={createPayment}
+              className={css.upgradePlanButton}
+              width='100%'
+            >
               {`Obtener ${selectedPlan === 'premium' ? 'Premium' : 'Básico'}`}
             </TeodriveButton>
             <p className={css.terms}>
