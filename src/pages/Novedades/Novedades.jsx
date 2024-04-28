@@ -6,9 +6,12 @@ import { useQuery } from 'react-query';
 import { Page } from '@components/Page/Page';
 import { useToast } from '@context/ToastContext';
 import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
+import { usePlan } from '@context/PlanContext';
 
 function Novedades() {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const { isPlan, upgradeAccount } = usePlan();
 
   const id = nanoid();
 
@@ -27,7 +30,7 @@ function Novedades() {
       console.log(data);
       const checkoutUrl = data;
 
-      // window.location.href = checkoutUrl;
+      window.location.href = checkoutUrl;
     } catch (error) {
       console.error('Error fetching:', error);
       throw error;
@@ -71,6 +74,8 @@ function Novedades() {
       canonical='novedades'
     >
       <TeodriveButton onClick={createPayment}>Payment</TeodriveButton>
+      {isPlan}
+      <TeodriveButton onClick={upgradeAccount}>Obtener Premium</TeodriveButton>
     </Page>
   );
 }

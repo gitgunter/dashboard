@@ -1,13 +1,20 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { useAuth } from './AuthContext';
 
 const PlanContext = createContext();
 
 export const PlanProvider = ({ children }) => {
-  const [isPlan, setIsPlan] = useState(null);
+  const { isLoading, data } = useAuth();
+  const [isPlan, setIsPlan] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading && data) {
+      setIsPlan(data.plan);
+    }
+  }, [isLoading, data]);
 
   const upgradeAccount = () => {
-    // Lógica para actualizar la cuenta a premium
-    setIsPlan(true);
+    setIsPlan('premium');
   };
 
   return (

@@ -14,11 +14,13 @@ import logo from '@assets/images/teodrive_logo.svg';
 
 import css from './Sidebar.module.css';
 import NotificationButton from '../NotificationButton/NotificationButton';
+import { usePlan } from '@context/PlanContext';
 
 const Sidebar = () => {
   const [upgradePlanModal, setUpgradePlanModal] = useState(false);
   const [accountSettingsModal, setAccountSettingsModal] = useState(false);
   const { isLoading, data } = useAuth();
+  const { isPlan } = usePlan();
 
   const onUpgradePlanModal = (e) => {
     e.preventDefault();
@@ -62,7 +64,7 @@ const Sidebar = () => {
         rowGap='0.25rem'
         height='100%'
       >
-        {!isLoading && data?.plan !== 'premium' && (
+        {isPlan === 'free' || isPlan === 'basic' && (
           <Cell
             icon={<Crown size={20} className={css.icon} />}
             label='Obten Premium'
@@ -71,6 +73,8 @@ const Sidebar = () => {
             onClick={onUpgradePlanModal}
           />
         )}
+        {/* {!isLoading && data?.plan !== 'premium' && (
+        )} */}
 
         <Cell
           icon={<News size={20} className={css.icon} />}
