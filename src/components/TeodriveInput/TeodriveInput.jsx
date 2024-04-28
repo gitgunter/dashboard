@@ -9,6 +9,7 @@ import css from './TeodriveInput.module.css';
 const TeodriveInput = ({
   inputLabel,
   inputSize,
+  error,
   helperText,
   helperTextColor,
   ...props
@@ -23,9 +24,12 @@ const TeodriveInput = ({
           spellCheck={props.spellCheck || false}
           autoComplete={props.autoComplete || 'off'}
           placeholder={props.placeholder || ''}
-          className={inputSize === 'medium' ? css.medium : ''}
+          className={`${inputSize === 'medium' ? css.medium : ''} ${
+            error && css.error
+          }`}
         />
       </div>
+      {error && <span className={css.inputError}>{error}</span>}
       {helperText && (
         <span className={css.helperText} style={{ color: helperTextColor }}>
           {helperText}
