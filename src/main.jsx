@@ -36,6 +36,7 @@ import Capitulos from './pages/Capitulos/Capitulos';
 import './assets/fonts/pretendard.css';
 import './styles/global.css';
 import './styles/reset.css';
+import PremiumRoute from '@utils/PremiumRoute';
 
 const router = createBrowserRouter([
   {
@@ -74,15 +75,15 @@ const router = createBrowserRouter([
       },
       {
         path: 'modalidades/quick-test',
-        element: <QuickTest />,
+        element: <PremiumRoute element={<QuickTest />} />,
       },
       {
         path: 'modalidades/un-minuto',
-        element: <UnMinuto />,
+        element: <PremiumRoute element={<UnMinuto />} />,
       },
       {
         path: 'modalidades/verdad-falso',
-        element: <VerdadFalso />,
+        element: <PremiumRoute element={<VerdadFalso />} />,
       },
     ],
   },
