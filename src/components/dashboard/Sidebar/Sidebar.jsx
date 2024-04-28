@@ -5,21 +5,19 @@ import Wrap from '@components/common/Wrap/Wrap';
 import sidebarData from '@config/sidebarData';
 import { Crown, CustomerSupport, News } from '@icons/index';
 import AccountButton from '../AccountButton/AccountButton';
-import { useAuth } from '@context/AuthContext';
 import UpgradePlanModal from '@components/dashboard/UpgradePlanModal/UpgradePlanModal';
 import AccountSettingsModal from '@components/dashboard/AccountSettingsModal/AccountSettingsModal';
+import { usePlan } from '@context/PlanContext';
+import NotificationButton from '../NotificationButton/NotificationButton';
 
 import teodrive from '@assets/images/teodrive.svg';
 import logo from '@assets/images/teodrive_logo.svg';
 
 import css from './Sidebar.module.css';
-import NotificationButton from '../NotificationButton/NotificationButton';
-import { usePlan } from '@context/PlanContext';
 
 const Sidebar = () => {
   const [upgradePlanModal, setUpgradePlanModal] = useState(false);
   const [accountSettingsModal, setAccountSettingsModal] = useState(false);
-  const { isLoading, data } = useAuth();
   const { isPlan } = usePlan();
 
   const onUpgradePlanModal = (e) => {
@@ -64,7 +62,7 @@ const Sidebar = () => {
         rowGap='0.25rem'
         height='100%'
       >
-        {isPlan === 'free' || isPlan === 'basic' && (
+        {(isPlan === 'free' || isPlan === 'basic') && (
           <Cell
             icon={<Crown size={20} className={css.icon} />}
             label='Obten Premium'
@@ -73,8 +71,6 @@ const Sidebar = () => {
             onClick={onUpgradePlanModal}
           />
         )}
-        {/* {!isLoading && data?.plan !== 'premium' && (
-        )} */}
 
         <Cell
           icon={<News size={20} className={css.icon} />}
