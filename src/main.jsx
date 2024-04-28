@@ -6,9 +6,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import ProtectedRoute from './utils/ProtectedRoute';
-import { AuthProvider } from './context/AuthContext';
-import { SidebarProvider } from './context/SidebarContext';
+import { AuthProvider } from '@context/AuthContext';
+import { SidebarProvider } from '@context/SidebarContext';
 import { ToastProvider } from '@context/ToastContext';
+import { PlanProvider } from '@context/PlanContext';
 
 // Page components
 import NotFound from './pages/NotFound/NotFound';
@@ -112,9 +113,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
-          <ToastProvider>
-            <RouterProvider router={router} />
-          </ToastProvider>
+          <PlanProvider>
+            <ToastProvider>
+              <RouterProvider router={router} />
+            </ToastProvider>
+          </PlanProvider>
         </AuthProvider>
       </QueryClientProvider>
     </HelmetProvider>

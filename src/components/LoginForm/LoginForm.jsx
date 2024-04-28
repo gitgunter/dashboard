@@ -1,8 +1,11 @@
-import axios from 'axios';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
-import { useAuth } from '../../context/AuthContext';
+import { useMutation } from 'react-query';
+
+import { useAuth } from '@context/AuthContext';
 import { Input } from '../Input/Input';
+import { signIn } from '@services/authService';
+import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
 
 import css from './LoginForm.module.css';
 
@@ -10,11 +13,13 @@ export const LoginForm = () => {
   const { login } = useAuth();
 
   const ERROR_MESSAGES = {
-    EMAIL_NOT_FOUND: 'No se encontró un usuario registrado con este correo electrónico.',
+    EMAIL_NOT_FOUND:
+      'No se encontró un usuario registrado con este correo electrónico.',
     INCORRECT_PASSWORD: 'La contraseña proporcionada es incorrecta.',
-    UNKNOWN_ERROR: 'Ocurrió un error desconocido. Por favor, inténtalo de nuevo más tarde.',
+    UNKNOWN_ERROR:
+      'Ocurrió un error desconocido. Por favor, inténtalo de nuevo más tarde.',
   };
-  
+
   const handleErrors = (error, setErrors) => {
     const errMsg = error.response?.data?.message;
     if (errMsg === ERROR_MESSAGES.EMAIL_NOT_FOUND) {
@@ -25,6 +30,16 @@ export const LoginForm = () => {
       setErrors({ general: ERROR_MESSAGES.UNKNOWN_ERROR });
     }
   };
+
+  const loginMutation = useMutation(signIn, {
+    onError: (error) => {
+      handleErrors(error, formik.setErrors);
+    },
+    onSuccess: (data) => {
+      const token = data.userToken;
+      login(token);
+    },
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -43,18 +58,8 @@ export const LoginForm = () => {
         .min(6, 'La contraseña debe tener al menos 6 caracteres')
         .required('Introduce una contraseña'),
     }),
-    onSubmit: async (loginFormData, { setErrors }) => {
-      try {
-        const response = await axios.post(
-          'https://api.teodrive.com/auth/login',
-          { email: loginFormData.email, password: loginFormData.password }
-        );
-
-        const token = response.data.userToken;
-        login(token);
-      } catch (error) {
-        handleErrors(error, setErrors);
-      }
+    onSubmit: async (loginFormData) => {
+      loginMutation.mutate(loginFormData);
     },
   });
 
@@ -87,38 +92,15 @@ export const LoginForm = () => {
             placeholder='Contraseña'
             error={formik.errors.password && formik.touched.password}
           />
-          {formik.errors.password && formik.touched.password && 
+          {formik.errors.password && formik.touched.password && (
             <InputError>{formik.errors.password}</InputError>
-          }
+          )}
         </div>
       </div>
-      <Button />
+      <TeodriveButton type='submit' disabled={loginMutation.isLoading}>
+        {loginMutation.isLoading ? 'Validando...' : 'Iniciar sesión'}
+      </TeodriveButton>
     </form>
-  );
-};
-
-export const Button = () => {
-  const styles = {
-    cursor: 'pointer',
-    userSelect: 'none',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    verticalAlign: 'baseline',
-    backgroundColor: '#1676fe',
-    borderRadius: '0.75rem',
-    color: '#fff',
-    fontSize: '0.875rem',
-    fontWeight: '500',
-    lineHeight: '1.25rem',
-    padding: '0.625rem 0.875rem',
-    width: '100%',
-  };
-
-  return (
-    <button type='submit' style={styles}>
-      Iniciar sesión
-    </button>
   );
 };
 
