@@ -9,57 +9,57 @@ import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
 import { usePlan } from '@context/PlanContext';
 
 function Novedades() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
-  const { isPlan, upgradeAccount } = usePlan();
+  // const { isPlan, upgradeAccount } = usePlan();
 
-  const id = nanoid();
+  // const id = nanoid();
 
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
-  const devURL = 'http://localhost:3000/payments/purchase-plan';
-  const apiURL = 'https://api.teodrive.com/payments/purchase-plan';
+  // const devURL = 'http://localhost:3000/payments/purchase-plan';
+  // const apiURL = 'https://api.teodrive.com/payments/purchase-plan';
 
-  const createPayment = async () => {
-    try {
-      const { data } = await axios.post(apiURL, {
-        user_order_id: id,
-        user_order_email: 'keylordani@gmail.com',
-      });
+  // const createPayment = async () => {
+  //   try {
+  //     const { data } = await axios.post(apiURL, {
+  //       user_order_id: id,
+  //       user_order_email: 'keylordani@gmail.com',
+  //     });
 
-      console.log(data);
-      const checkoutUrl = data;
+  //     console.log(data);
+  //     const checkoutUrl = data;
 
-      window.location.href = checkoutUrl;
-    } catch (error) {
-      console.error('Error fetching:', error);
-      throw error;
-    }
-  };
+  //     window.location.href = checkoutUrl;
+  //   } catch (error) {
+  //     console.error('Error fetching:', error);
+  //     throw error;
+  //   }
+  // };
 
-  const getOrderIdParam = searchParams.get('user_order_id');
-  const getEmailParam = searchParams.get('user_email');
+  // const getOrderIdParam = searchParams.get('user_order_id');
+  // const getEmailParam = searchParams.get('user_email');
 
-  const handlePaymetValidation = async (orderId, email) => {
-    console.log(`Validating order ${orderId} with email ${email}`);
-    return 'Orden completada!';
-  };
+  // const handlePaymetValidation = async (orderId, email) => {
+  //   console.log(`Validating order ${orderId} with email ${email}`);
+  //   return 'Orden completada!';
+  // };
 
-  const shouldFetch = !!getOrderIdParam && !!getEmailParam;
+  // const shouldFetch = !!getOrderIdParam && !!getEmailParam;
 
-  const orderValidation = useQuery(
-    ['payment_order_validation'],
-    () => handlePaymetValidation(getOrderIdParam, getEmailParam),
-    {
-      enabled: shouldFetch,
-      onSuccess: () => {
-        toast('Orden completada');
-      },
-      onError: (error) => {
-        console.error('Validation failed', error);
-      },
-    }
-  );
+  // const orderValidation = useQuery(
+  //   ['payment_order_validation'],
+  //   () => handlePaymetValidation(getOrderIdParam, getEmailParam),
+  //   {
+  //     enabled: shouldFetch,
+  //     onSuccess: () => {
+  //       toast('Orden completada');
+  //     },
+  //     onError: (error) => {
+  //       console.error('Validation failed', error);
+  //     },
+  //   }
+  // );
 
   // const addOrUpdateSearchParam = (key, value) => {
   //   const params = new URLSearchParams(searchParams);
@@ -73,9 +73,6 @@ function Novedades() {
       metaDesc='Registro de cambios de actualizaciones de Teodrive'
       canonical='novedades'
     >
-      <TeodriveButton onClick={createPayment}>Payment</TeodriveButton>
-      {isPlan}
-      <TeodriveButton onClick={upgradeAccount}>Obtener Premium</TeodriveButton>
     </Page>
   );
 }
