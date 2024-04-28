@@ -8,7 +8,7 @@ import { getBooleanQuestions } from '@services/examService.js';
 import { VerdadFalsoExam } from '@components/VerdadFalsoExam/VerdadFalsoExam';
 import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
 
-import { Add01, ThumbsUpDown } from '@icons/index';
+import { Add01 } from '@icons/index';
 
 import css from './VerdadFalso.module.css';
 
@@ -18,7 +18,7 @@ function VerdadFalso() {
 
   const breadcrumbs = ['Modalidades', 'Verdad o falso'];
 
-  const questionQuery = useQuery(['questions'], () => getBooleanQuestions(5), {
+  const questionQuery = useQuery(['questions'], () => getBooleanQuestions(15), {
     enabled: false,
     onSuccess: (res) => {
       console.log(res);
@@ -38,7 +38,7 @@ function VerdadFalso() {
 
   const verdadFalsoConfig = {
     name: 'Verdad o falso',
-    timeLimit: 5,
+    timeLimit: 30,
   };
 
   return (
