@@ -1,17 +1,4 @@
 .CreateExamModal {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-.CreateExamModal .modal {
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -22,41 +9,41 @@
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .CreateExamModal .modal {
+  .CreateExamModal {
     border-radius: 1.375rem;
     width: 470px;
   }
 }
-.CreateExamModal .modal .modalHeader {
+.CreateExamModal .modalHeader {
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
 }
-.CreateExamModal .modal .modalHeader .modalHeaderTitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 2rem; /* 133.333% */
+.CreateExamModal .modalHeader .modalHeaderTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.625rem;
   letter-spacing: -0.016rem;
 }
-.CreateExamModal .modal .modalHeader .modalHeaderCaption {
+.CreateExamModal .modalHeader .modalHeaderCaption {
   color: rgba(255, 255, 255, 0.4);
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
 }
-.CreateExamModal .modal .modalContent {
+.CreateExamModal .modalContent {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.CreateExamModal .modal .examSelectWrapper {
+.CreateExamModal .examSelectWrapper {
   display: flex;
   flex-direction: column;
   row-gap: 0.625rem;
   padding-bottom: 1.5rem;
   width: 100%;
 }
-.CreateExamModal .modal .modalButtonWrapper {
+.CreateExamModal .modalButtonWrapper {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -94,6 +81,10 @@
   height: fit-content;
 }
 .LabelRadio .label {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
@@ -144,4 +135,60 @@
 .LabelRadio.active .radio::before {
   opacity: 1;
   visibility: visible;
+}
+
+.advancedOptionsWrapper {
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 0.625rem;
+  margin-top: 1.5rem;
+}
+.advancedOptions {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 0.375rem;
+       column-gap: 0.375rem;
+  vertical-align: baseline;
+  border-radius: 0.625rem;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0 0.5rem;
+  width: 100%;
+  min-height: 2rem;
+  max-height: 2rem;
+  transition: background-color 100ms ease-out, color 100ms ease-out, box-shadow 200ms;
+}
+.advancedOptions:hover {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+.advancedOptions.active {
+  box-shadow: inset 0 0 0 2px var(--teodriveColor);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+.advancedOptions.active .arrowIcon {
+  transform: rotate(90deg);
+}
+.advancedOptions .arrowIcon {
+  margin-left: auto;
+  transition: transform 200ms ease-out;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 0.5rem;
+  padding-top: 1.5rem;
 }

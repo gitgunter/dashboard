@@ -35,3 +35,4 @@ export { default as News } from './news.jsx';
 export { default as CustomerSupport } from './customer-support.jsx';
 export { default as AlertCircle } from './alert-circle.jsx';
 export { default as Folder01 } from './folder-01.jsx';
+export { default as SlidersHorizontal } from './sliders-horizontal.jsx';

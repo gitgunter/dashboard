@@ -125,18 +125,12 @@ function Examenes() {
             )}
           </AnimatePresence>
         </LazyMotion>
-        <LazyMotion features={domAnimation}>
-          <AnimatePresence>
-            {createExam && (
-              <CreateExamModal
-                onCancel={handleCancelExam}
-                onCreate={formik.handleSubmit}
-                isModal={createExam}
-                formik={formik}
-              />
-            )}
-          </AnimatePresence>
-        </LazyMotion>
+        <CreateExamModal
+          onClose={handleCancelExam}
+          onCreate={formik.handleSubmit}
+          isVisible={createExam}
+          formik={formik}
+        />
         <PageNavigationBar
           breadcrumbs={breadcrumbs}
           title='Exámenes'

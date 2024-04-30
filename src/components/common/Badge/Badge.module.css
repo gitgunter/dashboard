@@ -17,4 +17,6 @@
   padding: 0 0.25rem;
   width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
