@@ -8,6 +8,7 @@ import { signIn } from '@services/authService';
 import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
 
 import css from './LoginForm.module.css';
+import Spinner from '@components/common/Spinner/Spinner';
 
 export const LoginForm = () => {
   const { login } = useAuth();
@@ -97,8 +98,19 @@ export const LoginForm = () => {
           )}
         </div>
       </div>
-      <TeodriveButton type='submit' width='100%' disabled={loginMutation.isLoading}>
-        {loginMutation.isLoading ? 'Validando...' : 'Iniciar sesión'}
+      <TeodriveButton
+        type='submit'
+        width='100%'
+        disabled={loginMutation.isLoading}
+      >
+        {loginMutation.isLoading ? (
+          <>
+            <Spinner size={20} />
+            Validando...
+          </>
+        ) : (
+          'Iniciar sesión'
+        )}
       </TeodriveButton>
     </form>
   );
