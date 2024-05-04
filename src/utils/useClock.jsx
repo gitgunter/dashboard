@@ -22,3 +22,26 @@ function useClock(timezone = 'local') {
 }
 
 export default useClock;
+
+
+// import { useState, useEffect } from 'react';
+// import dayjs from 'dayjs';
+
+// function useClock(timezone = 'local') {
+//   const [currentTime, setCurrentTime] = useState(dayjs.locale('es'));
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentTime(dayjs());
+//     }, 1000);
+
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   // const adjustedTime =
+//     // timezone === 'local' ? currentTime : dayjs().tz(currentTime, timezone);
+
+//   return currentTime;
+// }
+
+// export default useClock;

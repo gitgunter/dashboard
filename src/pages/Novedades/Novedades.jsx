@@ -7,6 +7,10 @@ import { Page } from '@components/Page/Page';
 import { useToast } from '@context/ToastContext';
 import TeodriveButton from '@components/TeodriveButton/TeodriveButton';
 import { usePlan } from '@context/PlanContext';
+import Wrap from '@components/common/Wrap/Wrap';
+import TeodriveInput from '@components/TeodriveInput/TeodriveInput';
+import css from './Novedades.module.css';
+import { Cancel01 } from '@icons/index';
 
 function Novedades() {
   // const [searchParams, setSearchParams] = useSearchParams();
@@ -73,6 +77,39 @@ function Novedades() {
       metaDesc='Registro de cambios de actualizaciones de Teodrive'
       canonical='novedades'
     >
+      <Wrap
+        direction='column'
+        width='fit-content'
+        className={css.DeleteAccountModal}
+      >
+        <Wrap justify='space-between' align='center' width='100%' className={css.modalHeader}>
+          <h1 className={css.title}>Eliminar cuenta</h1>
+          <button type='button' className={css.closeBtn}>
+            <Cancel01 size={20} />
+          </button>
+        </Wrap>
+        <Wrap
+          direction='column'
+          rowGap='1.5rem'
+          width='100%'
+          className={css.modalContent}
+        >
+          <Wrap direction='column'>
+            <p className={css.caption}>
+              ¿Está seguro de que desea eliminar su cuenta?
+            </p>
+            <p className={css.alert}>
+              Esta acción es permanente e irreversible.
+            </p>
+          </Wrap>
+          <TeodriveInput inputLabel='Escriba "Eliminar cuenta" a continuación para continuar.' style={{ width: '400px' }} />
+        </Wrap>
+        <Wrap justify='flex-end' width='100%' className={css.modalBottom}>
+          <button type='button' className={css.deleteBtn}>
+            Eliminar cuenta
+          </button>
+        </Wrap>
+      </Wrap>
     </Page>
   );
 }
